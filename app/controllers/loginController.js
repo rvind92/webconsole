@@ -11,13 +11,15 @@
                pField: $scope.password
             });
             
-//            loginFactory.postCredentials(creds).then(function(response) {
-//                firebaseToken = response.data;
-//            }, function(data, status, headers, config) {
-//                alert("Error" + status);
-//            });
+            loginFactory.postCredentials(creds).success(function(response) {
+                firebaseToken = response.headers('Firebasetoken');
+            }, function(data, status, headers, config) {
+                alert("Error" + status);
+            });
             
-            $scope.PostDataResponse = $scope.email;
+            $scope.email = '';
+            $scope.password = '';
+            
         };
         
     }
