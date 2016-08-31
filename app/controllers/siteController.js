@@ -1,7 +1,10 @@
 (function() {
-    function SiteController($scope) {
+    
+    var SiteController = function($scope) {
         
     }
+    
+    SiteController.$inject = ['$scope'];
     
     angular.module('tanandApp').controller('SiteController', SiteController);
     

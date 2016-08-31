@@ -3,12 +3,14 @@
     
         var factory = {};
         
-        factory.postCredentials = function() {
-            return $http.get('/customers');
-        };
+        var config = {
+            headers: {
+                'Content-Type': 'text/plain; charset=utf-8;'
+            }
+        }
         
-        factory.getCustomer = function(customerId) {
-            return $http.get('/customers/' + customerId);
+        factory.postCredentials = function(credentials) {
+            return $http.post('/customers', credentials, config);
         };
         
         return factory;

@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app>
+<html ng-app="tanandApp">
     <head>
         <title>Tanand Demo</title>
     </head>
@@ -8,40 +8,13 @@
         
         <div> Tanand Picture</div>
         
-        <div> <ng-view></ng-view></div>
+        <div ng-view></div>
         
         <script src="scripts/angular.js"></script>
         <script src="scripts/angular-route.js"></script>
-       
-        <script>
-            function SiteController($scope) {
-                
-            }
-        </script>
-        <script>
-            function BuildingController($scope) {
-                
-            }
-        </script>
-        <script>
-            function FloorplanController($scope) {
-                
-            }
-        </script>
-        <script>
-            function SensorController($scope) {
-                
-            }
-        </script>
-        <script>
-            function EditDeleteController($scope) {
-                
-            }
-        </script>
-        <script>
-            function RegisterController($scope) {
-                
-            }
-        </script>
+        <script src="app/app.js"></script>
+        <script src="app/controllers/loginController.js"></script>
+        <script src="app/services/loginFactory.js"></script>
+        
     </body>
 </html>
