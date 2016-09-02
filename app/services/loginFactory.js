@@ -10,7 +10,11 @@
         }
         
         factory.postCredentials = function(credentials) {
-            return $http.post('/customers', credentials, config);
+            return $http.post('/users', credentials, config);
+        };
+        
+        factory.createUser = function(credentials) {
+            return $http.post('/users', credentials, config);
         };
         
         return factory;

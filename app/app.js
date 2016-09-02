@@ -1,19 +1,17 @@
 (function() {
     
-    
-    
-    var app = angular.module('tanandApp', ['ngRoute', 'firebase']);
+    var app = angular.module('tanandApp', ['ngRoute']);
     
     app.config(function($routeProvider) {
         $routeProvider
-            .when('/', {
+            .when('/login', {
                 controller: 'LoginController',
                 templateUrl: 'app/views/login.html'
             })
-//            .when('/site', {
-//                controller: 'SiteController',
-//                templateUrl: 'app/views/site.html'
-//            })
+            .when('/site', {
+                controller: 'SiteController',
+                templateUrl: 'app/views/site.html'
+            })
 //            .when('/building', { 
 //                controller: "BuildingController", 
 //                templateUrl: "app/views/building.html"
@@ -34,7 +32,7 @@
 //                controller: "RegisterController",
 //                templateUrl: "app/views/register.html"
 //            })
-            .otherwise( { redirectTo: '/' } );
+            .otherwise( { redirectTo: '/login' } );
     });
     
 }());
