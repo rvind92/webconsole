@@ -1,5 +1,6 @@
 (function() {
-    function RegisterController($scope) {
+    
+    var RegisterController = function($scope, webServiceFactory) {
         
     }
     

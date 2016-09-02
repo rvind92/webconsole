@@ -1,5 +1,6 @@
 (function() {
-    function EditDeleteController($scope) {
+    
+    var EditDeleteController = function($scope, fireFactory) {
         
     }
     

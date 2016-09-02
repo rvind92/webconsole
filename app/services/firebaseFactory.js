@@ -4,27 +4,31 @@
         
         var firebase = {};
         
-        firebase.setSite = function(siteKey, address, lat, lng, site) {
+        firebase.setSite = function(siteKey, address, lat, lng, siteName) {
             const rootRef = firebase.database().ref().child('locationList');
             var siteRef = rootRef.child(siteKey);
             return siteRef.set({
-                "address": address,
-                "lat": lat,
-                "lng": lng,
-                "site": site
+                address: address,
+                lat: lat,
+                lng: lng,
+                site: site
             });
         };
         
-        firebase.setBuilding = function(siteKey, building) {
+        firebase.setBuilding = function(siteKey, buildingKey, buildingName) {
             const rootRef = firebase.database().ref().child('buildingList').child(siteKey);
-            var buildingRef = rootRef.child().child(buildingKey);
+            var buildingRef = rootRef.child().child(buildingKey).child('name');
             return buildingRef.set({
+                name: buildingName
+            });
+        };
+        
+        firebase.setFloorplan = function(siteKey, buildingKey,) {
+            const rootRef = firebase.database().ref().child('buildingList').child(siteKey).child(buildingKey);
+            var floorplanRef = rootRef.child('floorplan').child(floorplanKey);
+            return floorplanRef.set({
                 
             });
-        };
-        
-        firebase.setFloorplan = function() {
-            
         };
         
         firebase.setSensor = function() {

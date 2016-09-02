@@ -1,5 +1,5 @@
 (function() {
-    var loginFactory = function($http) {
+    var webServiceFactory = function($http) {
     
         var factory = {};
         
@@ -20,8 +20,8 @@
         return factory;
     };
     
-    loginFactory.$inject = ['$http'];
+    webServiceFactory.$inject = ['$http'];
         
-    angular.module('tanandApp').factory('loginFactory', loginFactory);
+    angular.module('tanandApp').factory('webServiceFactory', webServiceFactory);
                                            
 }());

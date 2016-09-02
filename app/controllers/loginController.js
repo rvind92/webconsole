@@ -1,6 +1,6 @@
 (function() {
     
-    var LoginController = function($scope, loginFactory) {
+    var LoginController = function($scope, webServiceFactory) {
         
         var firebaseToken;
         

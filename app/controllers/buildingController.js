@@ -1,5 +1,6 @@
 (function() {
-    function BuildingController($scope) {
+    
+    var BuildingController = function ($scope) {
         
     }
     

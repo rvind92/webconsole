@@ -1,5 +1,6 @@
 (function() {
-    function FloorplanController($scope) {
+    
+    var FloorplanController = function($scope, fireFactory) {
         
     }
     
