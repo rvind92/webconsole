@@ -1,6 +1,6 @@
 (function() {
     
-    var BuildingController = function ($scope) {
+    var BuildingController = function ($scope, fireFactory) {
         
     }
     
