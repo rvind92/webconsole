@@ -23,7 +23,7 @@
             });
         };
         
-        firebase.setFloorplan = function(siteKey, buildingKey,) {
+        firebase.setFloorplan = function(siteKey, buildingKey) {
             const rootRef = firebase.database().ref().child('buildingList').child(siteKey).child(buildingKey);
             var floorplanRef = rootRef.child('floorplan').child(floorplanKey);
             return floorplanRef.set({

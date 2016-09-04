@@ -5,17 +5,21 @@
         
         var config = {
             headers: {
-                'Content-Type': 'text/plain; charset=utf-8;'
+                'Content-Type': 'application/json; charset=utf-8;'
             }
         }
         
         factory.postCredentials = function(credentials) {
-            return $http.post('/users', credentials, config);
+            return $http.post('http://192.168.1.74:3030/users/login', credentials);
         };
         
         factory.createUser = function(credentials) {
-            return $http.post('/users', credentials, config);
+            return $http.post('http://192.168.1.74:3030/users', credentials);
         };
+        
+        factory.logOut = function(credentials) {
+            return $http.delete('http://192.168.1.74:3030/users/login', credentials)
+        }
         
         return factory;
     };

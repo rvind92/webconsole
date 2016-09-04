@@ -2,11 +2,11 @@
     
     var SiteController = function($scope, fireFactory) {
         
-        site = $scope.site;
-        siteKey = (site.replace(/ /g, '').toLowerCase());
-        address = $scope.address;
-        lat = $scope.lat;
-        lng: $scope.lng;
+        var site = $scope.site;
+        var siteKey = (site.replace(/ /g, '').toLowerCase());
+        var address = $scope.address;
+        var lat = $scope.lat;
+        var lng = $scope.lng;
         
         function init() {
             fireFactory.setSite(siteKey, address, lat, lng, site)

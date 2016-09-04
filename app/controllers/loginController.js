@@ -4,34 +4,30 @@
         
         var firebaseToken;
         
-        $scope.SendData = function() {
+        $scope.onSubmit = function() {
             
-            var creds = $.param({
-               eField: $scope.email,
-               pField: $scope.password
-            });
-            
-            loginFactory.postCredentials(creds).then(function(response) {
-                firebaseToken = response.headers('Firebasetoken');
-                $scope.email = '';
-                $scope.password = '';
+            webServiceFactory.postCredentials($scope.form).then(function(response) {
+                console.log($scope.form);
+                firebaseToken = response.headers('FirebaseToken');
+                console.log('This is the fbToken: ' + firebaseToken);
+                
+                if(firebaseToken) {
+                    firebase.auth().signInWithCustomToken(firebaseToken).catch(function(error) {
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                    });
+                    $scope.form = '';
+                    //need to add redirect path to site.html upon successful sign-in
+                }
             }, function(data, status, headers, config) {
-                alert("Error" + status);
+                alert("Error " + status);
             });
             
         };
-        
-        
-        // need to move this inside the Promise success and add a redirect path to site.html
-        if(firebaseToken) {
-            firebase.auth().signInWithCustomToken(firebaseToken).catch(function(error) {
-                var errorCode = error.code;
-                var errorMessage = error.message;
-            });
-        }  
+          
     }
     
-    LoginController.$inject = ['$scope', 'loginFactory'];
+    LoginController.$inject = ['$scope', 'webServiceFactory'];
     
     angular.module('tanandApp').controller('LoginController', LoginController);
     
