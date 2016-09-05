@@ -10,15 +10,15 @@
         }
         
         factory.postCredentials = function(credentials) {
-            return $http.post('http://192.168.1.74:3030/users/login', credentials);
+            return $http.post('http://192.168.3.3:3030/users/login', credentials);
         };
         
         factory.createUser = function(credentials) {
-            return $http.post('http://192.168.1.74:3030/users', credentials);
+            return $http.post('http://192.168.3.3:3030/users', credentials);
         };
         
         factory.logOut = function(credentials) {
-            return $http.delete('http://192.168.1.74:3030/users/login', credentials)
+            return $http.delete('http://192.168.3.3:3030/users/login', credentials)
         }
         
         return factory;

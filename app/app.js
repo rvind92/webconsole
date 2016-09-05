@@ -1,12 +1,16 @@
 (function() {
     
-    var app = angular.module('tanandApp', ['ngRoute']);
+    var app = angular.module('tanandApp', ['ngRoute', 'ngCookies']);
     
     app.config(function($routeProvider) {
         $routeProvider
             .when('/login', {
                 controller: 'LoginController',
                 templateUrl: 'app/views/login.html'
+            })
+            .when('/register', {
+                controller: "RegisterController",
+                templateUrl: "app/views/register.html"
             })
             .when('/site', {
                 controller: 'SiteController',
@@ -27,10 +31,6 @@
 //            .when('/edit_delete', {
 //                controller: "EditDeleteController",
 //                templateUrl: "app/views/edit_delete.html"
-//            })
-//            .when('/register', {
-//                controller: "RegisterController",
-//                templateUrl: "app/views/register.html"
 //            })
             .otherwise( { redirectTo: '/login' } );
     });
